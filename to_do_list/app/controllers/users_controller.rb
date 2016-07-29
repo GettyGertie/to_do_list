@@ -7,11 +7,15 @@ class UsersController < ApplicationController
     @user =User.new(user_params)
     if @user.save
       flash[:success]="You're signed in"
-      redirect to @user
+      redirect_to @user
     else
       flash[:fail]="Invalid signup details"
       render 'new'
   end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
 private
