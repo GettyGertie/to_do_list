@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      #redirect to the user page
+      remember user
       redirect_to user
     else
       render 'new'
