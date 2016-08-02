@@ -5,5 +5,9 @@
     <%= f.text_field :name %>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.submit %>
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+    <%= f.check_box :remember_me %>
+    <span>Remember me on this computer</span>
+    <% end %></span>
+    <%= f.submit "Login"%>
 <% end %>
