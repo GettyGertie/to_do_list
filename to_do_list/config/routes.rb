@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'listup' => 'lists#new'
 
   get 'password_resets/new'
 
@@ -19,6 +20,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users
+  
+  resources :lists
 
   resources :account_activations, only: [:edit]
 
