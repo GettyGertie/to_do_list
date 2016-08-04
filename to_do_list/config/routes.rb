@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'listup' => 'lists#new'
+  
+  get 'cardup' => 'cards#new'
 
   get 'password_resets/new'
 
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
   resources :users
   
   resources :lists
+  
+  resources :cards
 
   resources :account_activations, only: [:edit]
 

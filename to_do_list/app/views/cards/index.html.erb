@@ -1,13 +1,14 @@
-
 <table>
     <thead>
         <th>Title</th>
+        <th>Description</th>
     </thead>
     <tbody>
-        <% @lists.each do |l|%>
+        <% @cards.each do |c|%>
             <tr>
 
-                <td>  <%= l.title%> </td>
+                <td>  <%= c.title%> </td>
+                <td> <%= c.description%></td>
             <% end %>
             </tr>
     </tbody>
