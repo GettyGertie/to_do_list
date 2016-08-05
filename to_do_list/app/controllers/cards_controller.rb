@@ -18,6 +18,7 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  
   def index
     @cards = Card.all
   end

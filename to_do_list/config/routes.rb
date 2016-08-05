@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get 'help' => 'pages#help'
 
+  get 'show_list' => 'lists#show'
+  
+  # get 'user_lists' => 'users#show'
+
   root 'pages#home'
 
   get 'login' => 'sessions#new'

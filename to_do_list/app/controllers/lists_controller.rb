@@ -15,12 +15,14 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
+  @list = List.find(params[:id])
+  @cards = @list.cards
   end
 
   def index
     @lists = List.all
   end
+
 
   private
 

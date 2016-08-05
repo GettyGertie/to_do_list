@@ -11,8 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
+      log_in @user
            flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      redirect_to @user
          else
       flash[:fail]="Invalid signup details"
       render 'new'
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @lists = @user.lists
   end
 
   def index

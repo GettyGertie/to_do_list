@@ -1,5 +1,4 @@
 class List < ApplicationRecord
- belongs_to :user
- has_many :cards
-  validates :title, presence: true
+  has_many :cards
+  belongs_to :user
 end

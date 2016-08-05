@@ -1,1 +1,5 @@
-<%= @list.title %>
+<%= link_to "Create New Card", cardup_path%>
+<% @cards.each do |c| %>
+    <%= c.title%>
+    <%= c.description%>
+<% end %>
