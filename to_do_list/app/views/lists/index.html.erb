@@ -7,7 +7,7 @@
         <% @lists.each do |l|%>
             <tr>
 
-                <td>  <%= l.title%> </td>
+                <td>  <%=link_to  l.title , cards_path %> </td>
             <% end %>
             </tr>
     </tbody>

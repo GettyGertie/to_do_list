@@ -7,7 +7,7 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     if @card.save
       flash[:success] = "Card successfully created"
-      redirect_to @card
+      redirect_to cards_path
     else
       render 'new'
       flash.now[:fail] = "Sorry, try again"
