@@ -24,6 +24,18 @@ class CardsController < ApplicationController
     @cards = Card.all
   end
 
+  def move_card
+    @card = Card.find_by(id: params[:card_id])
+    @lists = current_user.lists
+  end
+
+  def choose_list
+    card = Card.find(params[:id])
+    card.update_attribute(:list_is, params[:list_id])
+    flash[:success] = "card moved!"
+    redirect_to list_path(id:params[:list_id])
+  end
+
   private
 
   def card_params
