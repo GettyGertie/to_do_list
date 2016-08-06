@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'items/new'
+
   get 'listup' => 'lists#new'
   
   get 'cardup' => 'cards#new'
@@ -13,9 +15,9 @@ Rails.application.routes.draw do
 
   get 'help' => 'pages#help'
 
-  get 'show_list' => 'lists#show'
+  get 'show_lists' => 'lists#show'
   
-  # get 'user_lists' => 'users#show'
+  get 'user_lists' => 'users#show'
 
   root 'pages#home'
 

@@ -1,13 +1,14 @@
 class CardsController < ApplicationController
   def new
+    @list= List.find_by(id: params[:list_id])
     @card = Card.new
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = list.cards.build(card_params)
     if @card.save
       flash[:success] = "Card successfully created"
-      redirect_to cards_path
+      redirect_to list_path(id: list.id)
     else
       render 'new'
       flash.now[:fail] = "Sorry, try again"

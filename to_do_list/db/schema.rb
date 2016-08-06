@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805145948) do
+ActiveRecord::Schema.define(version: 20160806122802) do
 
   create_table "cards", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -21,12 +21,32 @@ ActiveRecord::Schema.define(version: 20160805145948) do
     t.index ["list_id"], name: "index_cards_on_list_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string   "activity"
+    t.integer  "condition"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "card_id"
+    t.index ["card_id"], name: "index_items_on_card_id"
+  end
+
   create_table "lists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.string   "title"
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "requesters", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["card_id"], name: "index_requesters_on_card_id"
+    t.index ["user_id"], name: "index_requesters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
