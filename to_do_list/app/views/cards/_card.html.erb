@@ -1,0 +1,6 @@
+<%= card.title%>
+<%= card.description%>
+<%=link_to "New todo", new_item_path(card_id: card.id)%>
+<%=link_to "Move Card", move_card_path(card_id: card.id)%>
+<%@items= card.items%>
+<%= render @items%>

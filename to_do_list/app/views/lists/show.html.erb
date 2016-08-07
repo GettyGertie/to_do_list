@@ -1,5 +1,7 @@
-<%= link_to "Create New Card", cardup_path%>
-<% @cards.each do |c| %>
-    <%= c.title%>
-    <%= c.description%>
-<% end %>
+<%= link_to "Create New Card", new_card_path(list_id: @list.id)%>
+<%# <% @cards.each do |c| %1> %>
+<%#     <%= c.title%> %>
+<%#     <%= c.description%> %>
+<%# <% end %1> %>
+
+<%= render@cards%>

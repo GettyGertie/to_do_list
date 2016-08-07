@@ -2,8 +2,30 @@ Rails.application.routes.draw do
   get 'items/new'
 
   get 'listup' => 'lists#new'
-  
-  get 'cardup' => 'cards#new'
+
+  post 'new_cards' => 'cards#create'
+
+  get 'new_item' => 'items#new'
+
+  get 'mark_as_done' => 'items#mark_as_done'
+
+  get 'undo' => 'items#undo'
+
+  get 'other_todos' => 'items#index'
+
+  get 'move_card' => 'cadrs#move_card'
+
+  get 'choose_list' => 'cards#choose_lost'
+
+  get 'new_request' => 'requesters#new'
+
+  get 'requested_cards' => 'requesters#requested_cards' 
+
+  get 'accept_request' => 'requesters#accept_request'
+
+  get 'requests_accepted_list' => 'requesters#requests_accepted_list'
+
+  get 'reject_request' => 'requesters#reject_request'
 
   get 'password_resets/new'
 
@@ -15,23 +37,24 @@ Rails.application.routes.draw do
 
   get 'help' => 'pages#help'
 
-  get 'show_lists' => 'lists#show'
-  
-  get 'user_lists' => 'users#show'
 
   root 'pages#home'
 
   get 'login' => 'sessions#new'
-  
+
   post 'login' => 'sessions#create'
 
   delete 'logout' => 'sessions#destroy'
 
   resources :users
-  
+
+  resources :sessions
+
   resources :lists
-  
+
   resources :cards
+
+  resources :items, only: [:new, :create]
 
   resources :account_activations, only: [:edit]
 

@@ -5,6 +5,7 @@ class CardsController < ApplicationController
   end
 
   def create
+    list =List.find_by(id: params[:list_id])
     @card = list.cards.build(card_params)
     if @card.save
       flash[:success] = "Card successfully created"

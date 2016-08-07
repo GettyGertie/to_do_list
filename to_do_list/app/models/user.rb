@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :lists
+  has_many :lists, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   # has_many :cards
   before_save :downcase_email

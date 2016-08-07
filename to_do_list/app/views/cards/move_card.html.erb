@@ -1,0 +1,4 @@
+<h1>Move "<%=@card.title%>"card to :</h1>
+<%@lists.each do |list|%>
+    <%=link_to "#{list.title}", choose_list_path(card_id: @card.id, list_id: list.id) unless list.id == @card.list_id%>
+<%end%>

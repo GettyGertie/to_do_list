@@ -1,0 +1,21 @@
+<% @requests.each do |request|%>
+    <%=  request.card.title%>
+    <%=request.card.description%>
+
+    <%= link_to "new todo item", new_item_path(card_id: request.card.id)%>
+card_belongs_to:<%=request.card.list.user.name%>
+
+<% @items =request.card.items %>
+<% items.each do |item| %>
+<% if item.condition =="public" %>
+<%= item.activity%>
+<span class="secondary label">
+    <%=item.condition%>
+    <% if item.status == "incomplete" %>
+INCOPLETE
+<% else %>
+DONE
+<% end %>
+<% end %>
+<% end %>
+<% end %>

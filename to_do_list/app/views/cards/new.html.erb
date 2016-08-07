@@ -1,5 +1,5 @@
 <%= provide(:title, "Create Card") %>
-<%= form_for (@card) do |f| %>
+<%= form_for(@card, url: new_cards_path(list_id: @list.id)) do |f| %>
     <%= f.label :title%>
     <%= f.text_field :title%>
     <%= f.label :description%>

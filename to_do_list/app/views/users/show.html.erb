@@ -1,6 +1,6 @@
 <%= provide(:title, "Welcome")%>
 
-    <%= link_to "Create list", listup_path%>
+    <%= link_to "Create list", new_list_path%>
 <%= @lists.each do |u| %>
-    <%= link_to u.title , user_lists_path(id: u.id)%>|
+    <%= link_to u.title , list_path(id: u.id)%>|
 <% end %>

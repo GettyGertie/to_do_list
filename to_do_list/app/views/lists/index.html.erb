@@ -1,13 +1,15 @@
-
+<%= link_to "create new list", new_list_path%>
+<%= link_to "Accepted requests", requests_accepted_list_path%>
 <table>
     <thead>
         <th>Title</th>
     </thead>
-    <tbody>
+    <tbody><% if @lists.any? %>
         <% @lists.each do |l|%>
             <tr>
 
-                <td>  <%=link_to  l.title , user_lists_path(id: l.id) %> </td>
+                <td>  <%=link_to  l.title , list_path(id: l.id) %> </td>
+            <% end %>
             <% end %>
             </tr>
     </tbody>
