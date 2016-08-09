@@ -1,4 +1,4 @@
-<h1>Add todo item to "<%=@card.title%>" cad</h1>
+<p>Add todo item to this card</p>
 <%= form_for(@item, url: items_path(card_id:@card.id)) do |f|%>
     <%= f.label :activity%>
 <%= f.text_field :activity%>
