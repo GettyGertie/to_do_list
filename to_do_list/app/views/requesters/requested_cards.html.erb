@@ -1,4 +1,4 @@
-<% requesters.each do |requester| %>
+<% @requesters.each do |requester| %>
 <%= requester.card.title %>
 <% @user=User.find(requester.user_id)%>
 <%=@user.name%>

@@ -1,2 +1,14 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h1>Add todo item to "<%=@card.title%>" cad</h1>
+<%= form_for(@item, url: items_path(card_id:@card.id)) do |f|%>
+    <%= f.label :activity%>
+<%= f.text_field :activity%>
+<%if @card.list.user != current_user%>
+<p>this item is public<p>
+<% else%>
+<%= f.label :condition do %>
+<%= f.check_box :condition%>
+<p>private</p>
+<% end%>
+<% end%>
+<%= f.submit "Add item"%>
+<% end %>

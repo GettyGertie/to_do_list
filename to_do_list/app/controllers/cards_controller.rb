@@ -31,8 +31,8 @@ class CardsController < ApplicationController
   end
 
   def choose_list
-    card = Card.find(params[:id])
-    card.update_attribute(:list_is, params[:list_id])
+    card = Card.find(params[:card_id])
+    card.update_attribute(:list_id, params[:list_id])
     flash[:success] = "card moved!"
     redirect_to list_path(id:params[:list_id])
   end

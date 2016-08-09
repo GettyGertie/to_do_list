@@ -1,6 +1,17 @@
-<%= card.title%>
-<%= card.description%>
-<%=link_to "New todo", new_item_path(card_id: card.id)%>
+<p>Title: <%= card.title%></p>
+<p>Description: <%= card.description%></p>
+<%=link_to "New todo", new_item_path(card_id: card.id)%>||
 <%=link_to "Move Card", move_card_path(card_id: card.id)%>
+<table>
+    <thead>
+        <th>Item</th>
+        <th>Private/Public</th>
+        <th>Mark As Done</th>
+    </thead>
+    <tbody>
+            <div class = "items">
 <%@items= card.items%>
 <%= render @items%>
+            </div>
+    </tbody>
+</table>

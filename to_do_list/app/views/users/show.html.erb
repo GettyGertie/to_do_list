@@ -1,6 +1,17 @@
 <%= provide(:title, "Welcome")%>
 
-    <%= link_to "Create list", new_list_path%>
-<%= @lists.each do |u| %>
-    <%= link_to u.title , list_path(id: u.id)%>|
-<% end %>
+<p>Welcome<b> <%=@user.name%></b> you have <b><%= @lists.count%></b> Lists</p>
+<%= link_to "Create list", new_list_path%>
+<table>
+    <thead>
+        <th>Lists</th>
+    </thead>
+    <tbody>
+<% @lists.each do |u| %>
+
+        <tr>
+    <td><%= link_to u.title , list_path(id: u.id)%></td>
+        <% end %>
+        </tr>
+    </tbody>
+    </table>

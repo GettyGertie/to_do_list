@@ -1,16 +1,19 @@
-<%=item.activity%>
-<%if item.condition == "public"%>
+<tr>
+    <td><%=item.activity%></td>
+    <td><%if item.condition == "public"%></td>
     <span class= "secondary label">
     <%else%>
         <span class="warning label">
         <%end%>
-        <%=item.condition%>
-        <% if item.status == "incomplete"%>
-            <span class="label"><%=link_to "Mark as done", mark_as_done+_path(item_id: item.id)%>
+        <%=item.condition%></span></td>
+    <td> <% if item.status == "incomplete"%>
+        <span class="label"><%=link_to "Mark as done", mark_as_done_path(item_id: item.id)%></span>
         <%else%>
             <b>  DONE</b>
-        <%end%>
-        <%if item.status == "done"%>
+        <%end%></td>
+    <td><%if item.status == "done"%>
             <span class="label"
                 <%=link_to "Undo", undo_path(item_id: item.id)%>
-            <%end%>
+                </span>
+            <%end%></td>
+    </tr>

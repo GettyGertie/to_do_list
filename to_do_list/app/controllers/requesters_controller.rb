@@ -4,7 +4,9 @@ class RequestersController < ApplicationController
     requester = Requester.new(requester_params)
     if requester.save
       flash[:success] = "request made"
-      redirect_to other_items_path
+      redirect_to other_todos_path
+    else
+      redirect_to root_path
     end
   end
 

@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def create
     @card = Card.find_by(id: params[:card_id])
+    params[:item][:condition] == '1' ? params[:item][:condition] = "Private" : params[:item][:condition] = "Public"
     @item = @card.items.build(item_params)
     if @item.save
       flash[:sucess]= "item added!"
@@ -22,7 +23,7 @@ class ItemsController < ApplicationController
 
   def index
     @items=[]
-    public_items = Item.where(condition: "public")
+    public_items = Item.where(condition: "Public")
     public_items.each do |item|
       if item.card.list.user != current_user
         @items << item
