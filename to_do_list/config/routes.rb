@@ -35,10 +35,10 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
 
   get 'help' => 'pages#help'
- get 'list' => 'lists#show'
+  # get 'list' => 'lists#show'
   get "lists" => 'lists#index'
   post 'lists' => 'lists#create'
-  
+  get 'list' => 'lists#show'
 root 'pages#home'
 
   get 'login' => 'sessions#new'

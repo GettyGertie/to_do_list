@@ -4,7 +4,8 @@ class AddCardTest < ActionDispatch::IntegrationTest
   
   def setup
     @user = users(:archer)
-    @list = List.new(title: "This titile")
+    @list = (:one)
+    @card = (:onec)
   end
  
  test "valid card info" do
@@ -19,12 +20,21 @@ class AddCardTest < ActionDispatch::IntegrationTest
   get new_list_path
   assert_difference 'List.count', 1 do
     post lists_path, params:{list:{title:"one"}}
-
-   # assert_select "a[href=?]", new_card_path
-   assert_select "a[href=?]", list_path(id: @list.id)
-    # get list_path(list_id: @list.id)
-    # get new_card_path(list_id: @list.id)
   end
   follow_redirect!
+   # assert_select "a[href=?]", list_path(id: @list.id)
+   get list_path(list_id: 1)
+
+   # assert_select "a[href=?]", new_card_path
+   #  get new_card_path
+
+  # assert_difference 'List.count', 1 do
+   #  post cards_path, params:{list:{title:"one", description:"oneonone"}}
+  # end
+  # follow_redirect!
+ # end
+
+ # test "should move card" do
+
  end
 end

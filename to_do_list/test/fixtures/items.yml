@@ -1,11 +1,10 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  activity: MyString
+  activity: doingfixtures
   condition: 1
   status: 1
+  card_id: 1
 
 two:
-  activity: MyString
+  activity: doing2fixtures
   condition: 1
   status: 1
