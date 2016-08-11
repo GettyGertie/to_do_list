@@ -3,5 +3,5 @@ class Item < ApplicationRecord
 
   enum condition:{ "Public": 0,  "Private": 1 }
 
-  enum status:{ "incomplete": 0, "done": 1 }
+  enum status:{ "incomplete": 0, "done": 1, "unresponded": 2 }
 end

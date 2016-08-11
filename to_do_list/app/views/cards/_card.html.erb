@@ -1,7 +1,7 @@
 <p>Title: <%= card.title%></p>
 <p>Description: <%= card.description%></p>
-<%=link_to "New todo", new_item_path(card_id: card.id)%>||
-<%=link_to "Move Card", move_card_path(card_id: card.id)%>
+<p class="button"><%=link_to "New todo", new_item_path(card_id: card.id)%></p>
+<p class="button"><%=link_to "Move Card", move_card_path(card_id: card.id)%></p>
 <table>
     <thead>
         <th>Item</th>

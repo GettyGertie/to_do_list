@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'items/new'
 
-  get 'listup' => 'lists#new'
 
   post 'new_cards' => 'cards#create'
 
@@ -36,9 +35,11 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
 
   get 'help' => 'pages#help'
-
-
-  root 'pages#home'
+ get 'list' => 'lists#show'
+  get "lists" => 'lists#index'
+  post 'lists' => 'lists#create'
+  
+root 'pages#home'
 
   get 'login' => 'sessions#new'
 

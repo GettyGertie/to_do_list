@@ -5,9 +5,11 @@ michael:
     admin: true
     activated: true
     activated_at: <%= Time.zone.now %>
+
 archer:
     name: Sterling Archer
     email: duchess@example.gov
     password_digest: <%= User.digest('password') %>
+    created_at: <%= Time.zone.now %>
     activated: true
     activated_at: <%= Time.zone.now %>
